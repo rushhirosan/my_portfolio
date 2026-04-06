@@ -1,0 +1,54 @@
+---
+import type { I18n } from '@/i18n/en'
+import { Image } from 'astro:assets'
+import profilePhoto from '@/assets/profile.jpg'
+
+interface Props {
+  t: I18n
+}
+
+const { t } = Astro.props
+---
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">{t.sections.about}</h2>
+    <div class="about-inner">
+      <Image
+        src={profilePhoto}
+        alt="Profile photo"
+        width={120}
+        height={120}
+        class="profile-photo"
+        loading="lazy"
+      />
+      <p class="bio">{t.about.bio}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .profile-photo {
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  .bio {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+
+  @media (max-width: 640px) {
+    .about-inner {
+      flex-direction: column;
+    }
+  }
+</style>

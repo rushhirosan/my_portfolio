@@ -1,0 +1,123 @@
+/* ── Custom properties ── */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #111111;
+  --color-text-muted: #666666;
+  --color-border: #e5e5e5;
+  --color-accent: #0070f3;
+  --color-tag-bg: #f0f0f0;
+  --color-tag-text: #444444;
+
+  --radius: 8px;
+  --shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.75rem;
+
+  --max-width: 900px;
+  --font: system-ui, -apple-system, sans-serif;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ── Skip link ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  z-index: 9999;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ── Layout ── */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+section {
+  padding: var(--space-xl) 0;
+}
+
+section + section {
+  border-top: 1px solid var(--color-border);
+}
+
+.section-title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  font-size: var(--text-sm);
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  line-height: 1.5;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  :root {
+    --text-3xl: 2rem;
+    --text-2xl: 1.5rem;
+    --space-xl: 4rem;
+    --space-lg: 2.5rem;
+  }
+}

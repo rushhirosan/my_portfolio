@@ -1,0 +1,63 @@
+---
+import type { I18n } from '@/i18n/en'
+import '@/styles/global.css'
+
+interface Props {
+  t: I18n
+  canonicalUrl: string
+}
+
+const { t, canonicalUrl } = Astro.props
+const { title, description } = t.meta
+const ogImage = new URL('/og.png', Astro.site).href
+const gaId = import.meta.env.PUBLIC_GA_ID
+---
+
+<!doctype html>
+<html lang={t.lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- OGP -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content={t.locale} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Google Analytics (production only, offloaded via Partytown) -->
+    {import.meta.env.PROD && gaId && (
+      <>
+        <script
+          type="text/partytown"
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+        />
+        <script type="text/partytown" define:vars={{ gaId }}>
+          window.dataLayer = window.dataLayer || []
+          function gtag() { dataLayer.push(arguments) }
+          gtag('js', new Date())
+          gtag('config', gaId)
+        </script>
+      </>
+    )}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t.a11y.skipToMain}</a>
+    <slot />
+  </body>
+</html>

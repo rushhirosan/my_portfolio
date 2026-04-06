@@ -1,0 +1,33 @@
+---
+import type { I18n } from '@/i18n/en'
+import { products } from '@/data/products'
+import ProductCard from './ProductCard.astro'
+
+interface Props {
+  t: I18n
+}
+
+const { t } = Astro.props
+---
+
+<section id="products">
+  <div class="container">
+    <h2 class="section-title">{t.sections.products}</h2>
+    <ul class="grid">
+      {products.map((product) => (
+        <li>
+          <ProductCard product={product} t={t} />
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-sm);
+  }
+</style>

@@ -1,0 +1,76 @@
+---
+import type { Article } from '@/data/writing'
+import type { I18n } from '@/i18n/en'
+
+interface Props {
+  article: Article
+  t: I18n
+}
+
+const { article, t } = Astro.props
+const title = article.title[t.lang as 'en' | 'ja']
+
+const date = new Date(article.publishedAt).toLocaleDateString(
+  t.lang === 'ja' ? 'ja-JP' : 'en-US',
+  { year: 'numeric', month: 'short', day: 'numeric' }
+)
+---
+
+<li class="writing-item">
+  <div class="writing-meta">
+    <time datetime={article.publishedAt}>{date}</time>
+    {article.platform && <span class="platform">{article.platform}</span>}
+  </div>
+  <a
+    href={article.url}
+    class="writing-title"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`${title} (${t.a11y.externalLink})`}
+  >
+    {title}
+  </a>
+</li>
+
+<style>
+  .writing-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .writing-item:last-child {
+    border-bottom: none;
+  }
+
+  .writing-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .platform {
+    background: var(--color-tag-bg);
+    color: var(--color-tag-text);
+    font-size: 0.75rem;
+    padding: 0.1em 0.5em;
+    border-radius: 4px;
+  }
+
+  .writing-title {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    line-height: 1.4;
+  }
+
+  .writing-title:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+</style>

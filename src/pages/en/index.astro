@@ -1,0 +1,24 @@
+---
+import { en } from '@/i18n/en'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+import HeroSection from '@/components/HeroSection.astro'
+import ProductsSection from '@/components/ProductsSection.astro'
+import WritingSection from '@/components/WritingSection.astro'
+import AboutSection from '@/components/AboutSection.astro'
+
+const t = en
+const canonicalUrl = new URL('/en/', Astro.site).href
+---
+
+<BaseLayout t={t} canonicalUrl={canonicalUrl}>
+  <Header t={t} lang="en" />
+  <main id="main">
+    <HeroSection t={t} />
+    <ProductsSection t={t} />
+    <WritingSection t={t} />
+    <AboutSection t={t} />
+  </main>
+  <Footer t={t} />
+</BaseLayout>

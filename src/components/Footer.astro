@@ -1,0 +1,28 @@
+---
+import type { I18n } from '@/i18n/en'
+
+interface Props {
+  t: I18n
+}
+
+const { t } = Astro.props
+---
+
+<footer class="footer">
+  <div class="container">
+    <p>{t.footer.copyright}</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-md) 0;
+  }
+
+  .footer p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-align: center;
+  }
+</style>

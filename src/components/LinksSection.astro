@@ -1,0 +1,65 @@
+---
+import type { I18n } from '@/i18n/en'
+import { links } from '@/data/links'
+
+interface Props {
+  t: I18n
+}
+
+const { t } = Astro.props
+---
+
+<section id="links">
+  <div class="container">
+    <h2 class="section-title">{t.sections.links}</h2>
+    <ul class="links-list">
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${link.label} (${t.a11y.externalLink})`}
+            class="link-item"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .link-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s, color 0.15s;
+    padding-bottom: 1px;
+  }
+
+  .link-item::after {
+    content: '↗';
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .link-item:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    text-decoration: none;
+  }
+</style>

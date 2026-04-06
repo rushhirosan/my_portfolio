@@ -1,0 +1,87 @@
+---
+import type { Product } from '@/data/products'
+import type { I18n } from '@/i18n/en'
+
+interface Props {
+  product: Product
+  t: I18n
+}
+
+const { product, t } = Astro.props
+const description = product.description[t.lang as 'en' | 'ja']
+---
+
+<article class="card">
+  <div class="card-body">
+    <h3 class="card-name">{product.name}</h3>
+    <p class="card-desc">{description}</p>
+    <ul class="card-tags" aria-label="Tags">
+      {product.tags.map((tag) => <li><span class="tag">{tag}</span></li>)}
+    </ul>
+  </div>
+  <a
+    href={product.url}
+    class="card-link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`${product.name} — ${t.product.visit} (${t.a11y.externalLink})`}
+  >
+    {t.product.visit} →
+  </a>
+</article>
+
+<style>
+  .card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-sm);
+    gap: var(--space-sm);
+    transition: box-shadow 0.15s;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .card-name {
+    font-size: var(--text-base);
+    font-weight: 700;
+  }
+
+  .card-desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    list-style: none;
+    margin-top: auto;
+  }
+
+  .card-link {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+    align-self: flex-start;
+  }
+
+  .card-link:hover {
+    text-decoration: underline;
+  }
+</style>
