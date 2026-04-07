@@ -15,7 +15,7 @@ export const en = {
   },
 
   hero: {
-    tagline: "Building tools that make people's lives a little better.",
+    tagline: 'Employee, indie developer, youth soccer coach, and Japanese-English bilingual.',
   },
 
   sections: {
@@ -34,7 +34,25 @@ export const en = {
   },
 
   about: {
-    bio: "I'm a software engineer based in Chiba. I love building small, useful tools and writing about things I learn along the way.",
+    bio: "I'm a software engineer based in Chiba, building small and useful products.",
+    profile: [
+      'Full-time employee and indie developer',
+      'In my 40s, living with my wife and two children',
+      'Youth soccer coach',
+      'Japanese-English bilingual',
+    ],
+    interestsTitle: 'Interests',
+    interests: [
+      'Competitive programming',
+      'AI',
+      'Soccer and futsal',
+      'Running',
+      'Organizational theory',
+      'Leadership and management',
+      'Focus and habits',
+      'Public speaking',
+      'Anger management',
+    ],
   },
 
   footer: {

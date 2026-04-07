@@ -22,7 +22,20 @@ const { t } = Astro.props
         class="profile-photo"
         loading="lazy"
       />
-      <p class="bio">{t.about.bio}</p>
+      <div class="about-content">
+        <p class="bio">{t.about.bio}</p>
+        <ul class="profile-list">
+          {t.about.profile.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <h3 class="interests-title">{t.about.interestsTitle}</h3>
+        <ul class="interests-list" aria-label={t.about.interestsTitle}>
+          {t.about.interests.map((interest) => (
+            <li><span class="interest-tag">{interest}</span></li>
+          ))}
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -44,6 +57,38 @@ const { t } = Astro.props
     font-size: var(--text-lg);
     color: var(--color-text-muted);
     line-height: 1.8;
+    margin-bottom: var(--space-sm);
+  }
+
+  .profile-list {
+    list-style: disc;
+    padding-left: 1.2rem;
+    color: var(--color-text-muted);
+    display: grid;
+    gap: 0.35rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .interests-title {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+  }
+
+  .interests-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .interest-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: var(--color-tag-bg);
+    color: var(--color-tag-text);
   }
 
   @media (max-width: 640px) {

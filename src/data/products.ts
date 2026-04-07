@@ -11,8 +11,8 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    slug: 'product-a',
-    name: 'Product A',
+    slug: 'trends-dashboard',
+    name: 'Trends Dashboard',
     description: {
       en: 'A dashboard that aggregates Japanese trend signals from news, search, tech, and market sources in one place.',
       ja: 'ニュース・検索・テック・マーケットなどの日本向けトレンドを横断して一覧できるダッシュボードです。',
@@ -21,8 +21,8 @@ export const products: Product[] = [
     tags: ['Trends', 'Dashboard'],
   },
   {
-    slug: 'product-b',
-    name: 'Product B',
+    slug: 'soccer-practice-search',
+    name: 'Soccer Practice Search',
     description: {
       en: 'A searchable soccer training video app with filters for purpose, group size, level, and channel plus favorites.',
       ja: '目的・人数・レベル・チャンネルでサッカー練習動画を検索し、お気に入り管理もできる検索サイトです。',
@@ -31,8 +31,8 @@ export const products: Product[] = [
     tags: ['Sports', 'Search'],
   },
   {
-    slug: 'product-c',
-    name: 'Product C',
+    slug: 'eiken-practice',
+    name: 'Eiken Practice',
     description: {
       en: 'An Eiken practice web app where learners can log in and continue study sessions with persistent accounts.',
       ja: '英検学習向けに、ログインして継続的に練習できるWebアプリです。',
@@ -41,8 +41,8 @@ export const products: Product[] = [
     tags: ['Education', 'Language Learning'],
   },
   {
-    slug: 'product-d',
-    name: 'Product D',
+    slug: 'talk-seed',
+    name: 'Talk Seed',
     description: {
       en: 'An iOS app that helps teams choose conversation topics using 3D dice, themed decks, and local session history.',
       ja: '3Dサイコロとテーマ別カードで会話テーマを決め、セッション履歴も端末内で管理できるiOSアプリです。',
