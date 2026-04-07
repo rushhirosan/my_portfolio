@@ -24,12 +24,13 @@ const { t } = Astro.props
       />
       <div class="about-content">
         <p class="bio">{t.about.bio}</p>
-        <ul class="profile-list">
+        <h3 class="about-subheading">{t.about.profileTitle}</h3>
+        <ul class="profile-list" aria-label={t.about.profileTitle}>
           {t.about.profile.map((item) => (
             <li>{item}</li>
           ))}
         </ul>
-        <h3 class="interests-title">{t.about.interestsTitle}</h3>
+        <h3 class="about-subheading">{t.about.interestsTitle}</h3>
         <ul class="interests-list" aria-label={t.about.interestsTitle}>
           {t.about.interests.map((interest) => (
             <li><span class="interest-tag">{interest}</span></li>
@@ -69,7 +70,7 @@ const { t } = Astro.props
     margin-bottom: var(--space-md);
   }
 
-  .interests-title {
+  .about-subheading {
     font-size: var(--text-sm);
     font-weight: 700;
     margin-bottom: var(--space-xs);

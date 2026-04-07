@@ -32,9 +32,8 @@ export const en = {
 
   about: {
     bio: "I'm a full-time employee and indie developer based in Chiba.",
-    profileTitle: 'Quick profile',
+    profileTitle: 'Brief profile',
     profile: [
-      'Full-time employee and indie developer',
       'In my 40s, living with my wife and two children',
       'Youth soccer coach',
       'Japanese-English bilingual',
