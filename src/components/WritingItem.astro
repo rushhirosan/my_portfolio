@@ -9,18 +9,15 @@ interface Props {
 
 const { article, t } = Astro.props
 const title = article.title[t.lang as 'en' | 'ja']
-
-const date = new Date(article.publishedAt).toLocaleDateString(
-  t.lang === 'ja' ? 'ja-JP' : 'en-US',
-  { year: 'numeric', month: 'short', day: 'numeric' }
-)
+const showPlatform = Boolean(article.platform && article.platform !== title)
 ---
 
 <li class="writing-item">
-  <div class="writing-meta">
-    <time datetime={article.publishedAt}>{date}</time>
-    {article.platform && <span class="platform">{article.platform}</span>}
-  </div>
+  {showPlatform && (
+    <div class="writing-meta">
+      <span class="platform">{article.platform}</span>
+    </div>
+  )}
   <a
     href={article.url}
     class="writing-title"
