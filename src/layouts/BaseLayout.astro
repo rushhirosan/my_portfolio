@@ -8,8 +8,14 @@ interface Props {
 }
 
 const { t, canonicalUrl } = Astro.props
-const { title, description } = t.meta
+const { title, description, siteName } = t.meta
 const ogImage = new URL('/og.png', Astro.site).href
+const ogLocaleAlternate = t.lang === 'ja' ? 'en_US' : 'ja_JP'
+const alternateUrls = [
+  { hreflang: 'ja', href: new URL('/', canonicalUrl).href },
+  { hreflang: 'en', href: new URL('/en/', canonicalUrl).href },
+  { hreflang: 'x-default', href: new URL('/', canonicalUrl).href },
+]
 const gaId = import.meta.env.PUBLIC_GA_ID
 ---
 
@@ -21,18 +27,27 @@ const gaId = import.meta.env.PUBLIC_GA_ID
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalUrl} />
+    {alternateUrls.map(({ hreflang, href }) => (
+      <link rel="alternate" hreflang={hreflang} href={href} />
+    ))}
 
     <!-- OGP -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content={t.locale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlternate} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@rushhirosan" />
+    <meta name="twitter:creator" content="@rushhirosan" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />

@@ -101,17 +101,6 @@ section + section {
   letter-spacing: -0.02em;
 }
 
-/* ── Tags ── */
-.tag {
-  display: inline-block;
-  background: var(--color-tag-bg);
-  color: var(--color-tag-text);
-  font-size: var(--text-sm);
-  padding: 0.2em 0.6em;
-  border-radius: 4px;
-  line-height: 1.5;
-}
-
 /* ── Responsive ── */
 @media (max-width: 640px) {
   :root {

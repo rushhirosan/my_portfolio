@@ -15,9 +15,6 @@ const description = product.description[t.lang as 'en' | 'ja']
   <div class="card-body">
     <h3 class="card-name">{product.name}</h3>
     <p class="card-desc">{description}</p>
-    <ul class="card-tags" aria-label="Tags">
-      {product.tags.map((tag) => <li><span class="tag">{tag}</span></li>)}
-    </ul>
   </div>
   <a
     href={product.url}
@@ -63,14 +60,6 @@ const description = product.description[t.lang as 'en' | 'ja']
     color: var(--color-text-muted);
     line-height: 1.6;
     flex: 1;
-  }
-
-  .card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem;
-    list-style: none;
-    margin-top: auto;
   }
 
   .card-link {

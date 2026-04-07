@@ -5,6 +5,7 @@ export const en = {
   meta: {
     title: 'Rush(y) Hirosan — Portfolio',
     description: 'Personal portfolio of Rush(y) Hirosan — products and writing.',
+    siteName: 'Rush(y) Hirosan',
   },
 
   nav: {
@@ -16,6 +17,7 @@ export const en = {
 
   hero: {
     tagline: 'Employee, indie developer, youth soccer coach, and Japanese-English bilingual.',
+    contactLine: 'Please reach out via X DM.',
     socialLabel: 'Social',
   },
 

@@ -17,6 +17,7 @@ const writingSorted = [...articles].sort((a, b) => b.publishedAt.localeCompare(a
   <div class="container">
     <h1 id="hero-heading" class="name">Rush(y) Hirosan</h1>
     <p class="tagline">{t.hero.tagline}</p>
+    <p class="contact-line">{t.hero.contactLine}</p>
 
     {primaryLinks.length > 0 && (
       <ul class="hero-links" aria-label={t.hero.socialLabel}>
@@ -76,6 +77,12 @@ const writingSorted = [...articles].sort((a, b) => b.publishedAt.localeCompare(a
 
   .tagline {
     font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xs);
+  }
+
+  .contact-line {
+    font-size: var(--text-sm);
     color: var(--color-text-muted);
     margin-bottom: var(--space-sm);
   }

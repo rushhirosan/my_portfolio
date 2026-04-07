@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap'
 import partytown from '@astrojs/partytown'
 
 export default defineConfig({
-  site: 'https://yourname.vercel.app',
+  site: 'https://my-portfolio-xi-ten-43.vercel.app',
   output: 'static',
   i18n: {
     defaultLocale: 'ja',

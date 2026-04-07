@@ -5,7 +5,6 @@ export type Product = {
   name: string
   description: LocalizedString
   url: string
-  tags: string[]
   image?: string
 }
 
@@ -18,7 +17,6 @@ export const products: Product[] = [
       ja: 'ニュース・検索・テック・マーケットなどの日本向けトレンドを横断して一覧できるダッシュボードです。',
     },
     url: 'https://trends-dashboard.fly.dev/',
-    tags: ['Trends', 'Dashboard'],
   },
   {
     slug: 'soccer-practice-search',
@@ -28,7 +26,6 @@ export const products: Product[] = [
       ja: '目的・人数・レベル・チャンネルでサッカー練習動画を検索し、お気に入り管理もできる検索サイトです。',
     },
     url: 'https://soccer-practice-search.fly.dev/',
-    tags: ['Sports', 'Search'],
   },
   {
     slug: 'eiken-practice',
@@ -38,7 +35,6 @@ export const products: Product[] = [
       ja: '英検学習向けに、ログインして継続的に練習できるWebアプリです。',
     },
     url: 'https://eiken-app.fly.dev/',
-    tags: ['Education', 'Language Learning'],
   },
   {
     slug: 'talk-seed',
@@ -48,6 +44,5 @@ export const products: Product[] = [
       ja: '3Dサイコロとテーマ別カードで会話テーマを決め、セッション履歴も端末内で管理できるiOSアプリです。',
     },
     url: 'https://apps.apple.com/us/app/talk-seed/id6760679042',
-    tags: ['iOS', 'Communication'],
   },
 ]

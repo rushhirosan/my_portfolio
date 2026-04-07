@@ -7,6 +7,7 @@ export const ja: I18n = {
   meta: {
     title: 'Rush(y) Hirosan — ポートフォリオ',
     description: 'Rush(y) Hirosan のポートフォリオ — プロダクトと執筆。',
+    siteName: 'Rush(y) Hirosan',
   },
 
   nav: {
@@ -18,6 +19,7 @@ export const ja: I18n = {
 
   hero: {
     tagline: '会社員 / 個人開発者 / 少年サッカーコーチ / 日英バイリンガル',
+    contactLine: 'ご連絡はXのDMでお願いします',
     socialLabel: 'SNS',
   },
 
