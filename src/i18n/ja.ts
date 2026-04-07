@@ -6,23 +6,24 @@ export const ja: I18n = {
 
   meta: {
     title: 'Rush(y) Hirosan — ポートフォリオ',
-    description: 'Rush(y) Hirosan のポートフォリオ — プロダクトと記事。',
+    description: 'Rush(y) Hirosan のポートフォリオ — プロダクトと執筆。',
   },
 
   nav: {
     products: 'プロダクト',
-    writing: '記事',
+    writing: '執筆',
     about: 'About',
     links: 'リンク',
   },
 
   hero: {
     tagline: '会社員 / 個人開発者 / 少年サッカーコーチ / 日英バイリンガル',
+    socialLabel: 'SNS',
   },
 
   sections: {
     products: 'プロダクト',
-    writing: '記事',
+    writing: '執筆',
     about: 'About',
     links: 'リンク',
   },
@@ -31,12 +32,9 @@ export const ja: I18n = {
     visit: '見る',
   },
 
-  writing: {
-    readMore: '続きを読む',
-  },
-
   about: {
-    bio: '千葉を拠点に活動するソフトウェアエンジニアです。小さくて役に立つプロダクトを作っています。',
+    bio: '千葉を拠点に活動する会社員兼個人開発者です。',
+    profileTitle: '簡単なプロフィール',
     profile: [
       '会社員兼個人開発者',
       '40代、子供2人と妻の4人家族',

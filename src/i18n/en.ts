@@ -16,6 +16,7 @@ export const en = {
 
   hero: {
     tagline: 'Employee, indie developer, youth soccer coach, and Japanese-English bilingual.',
+    socialLabel: 'Social',
   },
 
   sections: {
@@ -29,12 +30,9 @@ export const en = {
     visit: 'Visit',
   },
 
-  writing: {
-    readMore: 'Read more',
-  },
-
   about: {
-    bio: "I'm a software engineer based in Chiba, building small and useful products.",
+    bio: "I'm a full-time employee and indie developer based in Chiba.",
+    profileTitle: 'Quick profile',
     profile: [
       'Full-time employee and indie developer',
       'In my 40s, living with my wife and two children',
