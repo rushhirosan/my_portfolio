@@ -12,12 +12,16 @@ const { t } = Astro.props
   <div class="container">
     <h2 class="section-title">{t.sections.about}</h2>
     <div class="about-inner">
-      <div
-        class="about-avatar"
-        role="img"
-        aria-label={t.about.avatarAlt}
-      >
-        <span class="about-avatar-text" aria-hidden="true">RH</span>
+      <div class="about-avatar">
+        <img
+          src="/about-rh.svg"
+          alt={t.about.avatarAlt}
+          width="120"
+          height="120"
+          loading="lazy"
+          decoding="async"
+          class="about-avatar-img"
+        />
       </div>
       <div class="about-content">
         <p class="bio">{t.about.bio}</p>
@@ -49,34 +53,24 @@ const { t } = Astro.props
     flex-shrink: 0;
     width: 120px;
     height: 120px;
+    line-height: 0;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.06)) drop-shadow(0 12px 24px rgba(99, 102, 241, 0.3));
+  }
+
+  .about-avatar-img {
+    display: block;
+    width: 120px;
+    height: 120px;
     border-radius: 28%;
-    display: grid;
-    place-items: center;
-    background: linear-gradient(145deg, #6366f1 0%, #a855f7 52%, #f472b6 100%);
-    border: 3px solid #fff;
-    box-shadow:
-      0 2px 0 rgba(0, 0, 0, 0.06),
-      0 12px 28px rgba(99, 102, 241, 0.35);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    object-fit: cover;
   }
 
   @media (prefers-reduced-motion: no-preference) {
     .about-avatar:hover {
       transform: scale(1.04) rotate(-2deg);
-      box-shadow:
-        0 2px 0 rgba(0, 0, 0, 0.06),
-        0 16px 36px rgba(168, 85, 247, 0.4);
+      filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.06)) drop-shadow(0 16px 32px rgba(168, 85, 247, 0.38));
     }
-  }
-
-  .about-avatar-text {
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: -0.06em;
-    line-height: 1;
-    color: #fff;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
-    user-select: none;
   }
 
   .bio {

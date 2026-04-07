@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="about-rh-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="52%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+  </defs>
+  <rect
+    x="2"
+    y="2"
+    width="116"
+    height="116"
+    rx="34"
+    fill="url(#about-rh-grad)"
+    stroke="#ffffff"
+    stroke-width="3"
+  />
+  <text
+    x="60"
+    y="78"
+    font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+    font-size="42"
+    font-weight="800"
+    fill="#ffffff"
+    text-anchor="middle"
+  >RH</text>
+</svg>
