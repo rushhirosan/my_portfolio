@@ -15,7 +15,11 @@ type CardLink = { href: string; label: string }
 
 const cardLinks: CardLink[] = product.links
   ? [
-      product.links.web && { href: product.links.web, label: t.product.web },
+      product.links.web && { href: product.links.web[lang], label: t.product.web },
+      product.links.browser && {
+        href: product.links.browser[lang],
+        label: t.product.browser,
+      },
       product.links.appStore && {
         href: product.links.appStore[lang],
         label: t.product.appStore,

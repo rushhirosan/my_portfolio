@@ -1,7 +1,8 @@
 export type LocalizedString = { en: string; ja: string }
 
 export type ProductLinks = {
-  web?: string
+  web?: LocalizedString
+  browser?: LocalizedString
   appStore?: LocalizedString
 }
 
@@ -34,7 +35,14 @@ export const products: Product[] = [
       ja: '3Dサイコロとテーマ別カードで会話テーマを決め、セッション履歴も端末内で管理できるWeb・iOSアプリです。',
     },
     links: {
-      web: 'https://talk-seed.web.app/',
+      web: {
+        ja: 'https://talk-seed.web.app/',
+        en: 'https://talk-seed.web.app/?lang=en',
+      },
+      browser: {
+        ja: 'https://talk-seed.web.app/app.html',
+        en: 'https://talk-seed.web.app/app.html?lang=en',
+      },
       appStore: {
         ja: 'https://apps.apple.com/jp/app/talk-shuffle/id6760679042',
         en: 'https://apps.apple.com/us/app/talk-shuffle/id6760679042',

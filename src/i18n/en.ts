@@ -31,6 +31,7 @@ export const en = {
   product: {
     visit: 'Visit',
     web: 'Web',
+    browser: 'Browser',
     appStore: 'App Store',
   },
 

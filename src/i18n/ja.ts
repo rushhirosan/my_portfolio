@@ -33,6 +33,7 @@ export const ja: I18n = {
   product: {
     visit: '見る',
     web: 'Web',
+    browser: 'ブラウザ版',
     appStore: 'App Store',
   },
 
