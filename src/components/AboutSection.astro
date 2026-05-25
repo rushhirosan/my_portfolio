@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets'
 import type { I18n } from '@/i18n/en'
+import profileImage from '@/assets/profile.jpg'
 
 interface Props {
   t: I18n
@@ -13,11 +15,12 @@ const { t } = Astro.props
     <h2 class="section-title">{t.sections.about}</h2>
     <div class="about-inner">
       <div class="about-avatar">
-        <img
-          src="/about-rh.svg"
+        <Image
+          src={profileImage}
           alt={t.about.avatarAlt}
-          width="120"
-          height="120"
+          width={120}
+          height={120}
+          densities={[1, 2]}
           loading="lazy"
           decoding="async"
           class="about-avatar-img"
@@ -62,7 +65,7 @@ const { t } = Astro.props
     display: block;
     width: 120px;
     height: 120px;
-    border-radius: 28%;
+    border-radius: 50%;
     object-fit: cover;
   }
 

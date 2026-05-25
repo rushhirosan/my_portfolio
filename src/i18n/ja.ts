@@ -37,7 +37,7 @@ export const ja: I18n = {
   },
 
   about: {
-    avatarAlt: 'イニシャル RH のアバター',
+    avatarAlt: 'Rush(y) Hirosan のプロフィール写真',
     bio: '千葉を拠点に活動する会社員兼個人開発者です。',
     profileTitle: '簡易プロフィール',
     profile: [

@@ -35,7 +35,7 @@ export const en = {
   },
 
   about: {
-    avatarAlt: 'RH initials avatar',
+    avatarAlt: 'Profile photo of Rush(y) Hirosan',
     bio: "I'm a full-time employee and indie developer based in Chiba.",
     profileTitle: 'Brief profile',
     profile: [
