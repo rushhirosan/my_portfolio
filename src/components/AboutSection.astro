@@ -57,8 +57,6 @@ const { t } = Astro.props
     width: 120px;
     height: 120px;
     line-height: 0;
-    transition: transform 0.2s ease, filter 0.2s ease;
-    filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.06)) drop-shadow(0 12px 24px rgba(99, 102, 241, 0.3));
   }
 
   .about-avatar-img {
@@ -67,13 +65,7 @@ const { t } = Astro.props
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .about-avatar:hover {
-      transform: scale(1.04) rotate(-2deg);
-      filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.06)) drop-shadow(0 16px 32px rgba(168, 85, 247, 0.38));
-    }
+    background: #fff;
   }
 
   .bio {
