@@ -8,7 +8,22 @@ interface Props {
 }
 
 const { product, t } = Astro.props
-const description = product.description[t.lang as 'en' | 'ja']
+const lang = t.lang as 'en' | 'ja'
+const description = product.description[lang]
+
+type CardLink = { href: string; label: string }
+
+const cardLinks: CardLink[] = product.links
+  ? [
+      product.links.web && { href: product.links.web, label: t.product.web },
+      product.links.appStore && {
+        href: product.links.appStore[lang],
+        label: t.product.appStore,
+      },
+    ].filter((link): link is CardLink => Boolean(link))
+  : product.url
+    ? [{ href: product.url, label: t.product.visit }]
+    : []
 ---
 
 <article class="card">
@@ -16,15 +31,21 @@ const description = product.description[t.lang as 'en' | 'ja']
     <h3 class="card-name">{product.name}</h3>
     <p class="card-desc">{description}</p>
   </div>
-  <a
-    href={product.url}
-    class="card-link"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label={`${product.name} — ${t.product.visit} (${t.a11y.externalLink})`}
-  >
-    {t.product.visit} →
-  </a>
+  {cardLinks.length > 0 && (
+    <div class="card-links">
+      {cardLinks.map((link) => (
+        <a
+          href={link.href}
+          class="card-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${product.name} — ${link.label} (${t.a11y.externalLink})`}
+        >
+          {link.label} →
+        </a>
+      ))}
+    </div>
+  )}
 </article>
 
 <style>
@@ -62,12 +83,17 @@ const description = product.description[t.lang as 'en' | 'ja']
     flex: 1;
   }
 
+  .card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
   .card-link {
     font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-accent);
     text-decoration: none;
-    align-self: flex-start;
   }
 
   .card-link:hover {

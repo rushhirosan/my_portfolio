@@ -32,6 +32,8 @@ export const ja: I18n = {
 
   product: {
     visit: '見る',
+    web: 'Web',
+    appStore: 'App Store',
   },
 
   about: {

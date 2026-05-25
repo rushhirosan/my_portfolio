@@ -30,6 +30,8 @@ export const en = {
 
   product: {
     visit: 'Visit',
+    web: 'Web',
+    appStore: 'App Store',
   },
 
   about: {

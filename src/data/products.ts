@@ -1,10 +1,18 @@
 export type LocalizedString = { en: string; ja: string }
 
+export type ProductLinks = {
+  web?: string
+  appStore?: LocalizedString
+}
+
 export type Product = {
   slug: string
   name: string
   description: LocalizedString
-  url: string
+  /** Single destination for most products */
+  url?: string
+  /** Web and/or App Store when both exist */
+  links?: ProductLinks
   image?: string
 }
 
@@ -19,13 +27,19 @@ export const products: Product[] = [
     url: 'https://trends-dashboard.fly.dev/',
   },
   {
-    slug: 'soccer-practice-search',
-    name: 'Soccer Practice Search',
+    slug: 'talk-shuffle',
+    name: 'Talk Shuffle',
     description: {
-      en: 'A searchable soccer training video app with filters for purpose, group size, level, and channel plus favorites.',
-      ja: '目的・人数・レベル・チャンネルでサッカー練習動画を検索し、お気に入り管理もできる検索サイトです。',
+      en: 'A web and iOS app that helps teams choose conversation topics using 3D dice, themed decks, and local session history.',
+      ja: '3Dサイコロとテーマ別カードで会話テーマを決め、セッション履歴も端末内で管理できるWeb・iOSアプリです。',
     },
-    url: 'https://soccer-practice-search.fly.dev/',
+    links: {
+      web: 'https://talk-seed.web.app/',
+      appStore: {
+        ja: 'https://apps.apple.com/jp/app/talk-shuffle/id6760679042',
+        en: 'https://apps.apple.com/us/app/talk-shuffle/id6760679042',
+      },
+    },
   },
   {
     slug: 'eiken-practice',
@@ -37,12 +51,12 @@ export const products: Product[] = [
     url: 'https://eiken-app.fly.dev/',
   },
   {
-    slug: 'talk-seed',
-    name: 'Talk Seed',
+    slug: 'soccer-practice-search',
+    name: 'Soccer Practice Search',
     description: {
-      en: 'An iOS app that helps teams choose conversation topics using 3D dice, themed decks, and local session history.',
-      ja: '3Dサイコロとテーマ別カードで会話テーマを決め、セッション履歴も端末内で管理できるiOSアプリです。',
+      en: 'A searchable soccer training video app with filters for purpose, group size, level, and channel plus favorites.',
+      ja: '目的・人数・レベル・チャンネルでサッカー練習動画を検索し、お気に入り管理もできる検索サイトです。',
     },
-    url: 'https://apps.apple.com/us/app/talk-seed/id6760679042',
+    url: 'https://soccer-practice-search.fly.dev/',
   },
 ]
