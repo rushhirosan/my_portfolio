@@ -28,6 +28,15 @@ export const products: Product[] = [
     url: 'https://trends-dashboard.fly.dev/',
   },
   {
+    slug: 'g7-dashboard',
+    name: 'G7 Dashboard',
+    description: {
+      en: 'A dashboard that aggregates top headlines from major media in G7 countries, China, and India, readable in Japanese and English. Updates four times daily.',
+      ja: 'G7各国・中国・インドの主要メディアからトップニュース見出しを集約し、日本語・英語で読めるダッシュボードです。1日4回自動更新。',
+    },
+    url: 'https://g7-dashboard.vercel.app/',
+  },
+  {
     slug: 'talk-shuffle',
     name: 'Talk Shuffle',
     description: {
