@@ -59,13 +59,13 @@ export const products: Product[] = [
     },
   },
   {
-    slug: 'eiken-practice',
-    name: 'Eiken Practice',
+    slug: 'eigogohan',
+    name: 'Eigogohan',
     description: {
       en: 'An Eiken practice web app where learners can log in and continue study sessions with persistent accounts.',
       ja: '英検学習向けに、ログインして継続的に練習できるWebアプリです。',
     },
-    url: 'https://eiken-app.fly.dev/',
+    url: 'https://eigogohan.com/',
   },
   {
     slug: 'soccer-practice-search',
