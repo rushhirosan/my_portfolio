@@ -33,7 +33,7 @@ export const en = {
     web: 'Web',
     browser: 'Browser',
     appStore: 'App Store',
-    discontinued: 'Discontinued',
+    discontinued: 'Suspended',
   },
 
   about: {
