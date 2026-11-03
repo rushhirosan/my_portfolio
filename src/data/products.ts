@@ -15,6 +15,8 @@ export type Product = {
   /** Web and/or App Store when both exist */
   links?: ProductLinks
   image?: string
+  /** Shown next to the name when the product is no longer active */
+  discontinued?: boolean
 }
 
 export const products: Product[] = [
@@ -26,15 +28,6 @@ export const products: Product[] = [
       ja: 'ニュース・検索・テック・マーケットなどの日本向けトレンドを横断して一覧できるダッシュボードです。',
     },
     url: 'https://trends-dashboard.fly.dev/',
-  },
-  {
-    slug: 'g7-dashboard',
-    name: 'World Front Page',
-    description: {
-      en: 'A dashboard that aggregates top headlines from major media in G7 countries, China, and India, readable in Japanese and English. Updates four times daily.',
-      ja: 'G7各国・中国・インドの主要メディアからトップニュース見出しを集約し、日本語・英語で読めるダッシュボードです。1日4回自動更新。',
-    },
-    url: 'https://g7-dashboard.vercel.app/',
   },
   {
     slug: 'talk-shuffle',
@@ -68,6 +61,15 @@ export const products: Product[] = [
     url: 'https://eigogohan.com/',
   },
   {
+    slug: 'g7-dashboard',
+    name: 'World Front Page',
+    description: {
+      en: 'A dashboard that aggregates top headlines from major media in G7 countries, China, and India, readable in Japanese and English. Updates four times daily.',
+      ja: 'G7各国・中国・インドの主要メディアからトップニュース見出しを集約し、日本語・英語で読めるダッシュボードです。1日4回自動更新。',
+    },
+    url: 'https://g7-dashboard.vercel.app/',
+  },
+  {
     slug: 'soccer-practice-search',
     name: 'Soccer Practice Search',
     description: {
@@ -75,5 +77,6 @@ export const products: Product[] = [
       ja: '目的・人数・レベル・チャンネルでサッカー練習動画を検索し、お気に入り管理もできる検索サイトです。',
     },
     url: 'https://soccer-practice-search.fly.dev/',
+    discontinued: true,
   },
 ]

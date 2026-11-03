@@ -35,6 +35,7 @@ export const ja: I18n = {
     web: 'Web',
     browser: 'ブラウザ版',
     appStore: 'App Store',
+    discontinued: '停止中',
   },
 
   about: {

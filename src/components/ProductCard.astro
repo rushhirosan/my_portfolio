@@ -32,7 +32,12 @@ const cardLinks: CardLink[] = product.links
 
 <article class="card">
   <div class="card-body">
-    <h3 class="card-name">{product.name}</h3>
+    <h3 class="card-name">
+      {product.name}
+      {product.discontinued && (
+        <span class="card-status">({t.product.discontinued})</span>
+      )}
+    </h3>
     <p class="card-desc">{description}</p>
   </div>
   {cardLinks.length > 0 && (
@@ -79,6 +84,11 @@ const cardLinks: CardLink[] = product.links
   .card-name {
     font-size: var(--text-base);
     font-weight: 700;
+  }
+
+  .card-status {
+    font-weight: 500;
+    color: var(--color-text-muted);
   }
 
   .card-desc {
